@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Task Recorder App",
+  "name": "Task Recorder App: Built using React with TypeScript and Redux",
   "icons": [
     {
       "src": "favicon.ico",
