@@ -59,7 +59,7 @@ const groupEventsByDay = (events: UserEvent[]) => {
 const Calendar: React.FC<Props> = ({ events, loadUserEvents }) => {
   useEffect(() => {
     loadUserEvents();
-  }, []);
+  }, [loadUserEvents]);
 
   let groupedEvents: ReturnType<typeof groupEventsByDay> | undefined;
   let sortedGroupKeys: string[] | undefined;

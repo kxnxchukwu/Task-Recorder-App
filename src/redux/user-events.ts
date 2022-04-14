@@ -3,9 +3,11 @@ import { ThunkAction } from "redux-thunk";
 import { selectDateStart } from "./recorder";
 import { RootState } from "./store";
 
-if (process.env.NODE_ENV === 'production') {
-}
+let url:string = 'http://localhost:3001/events'
 
+if (process.env.NODE_ENV === 'production') {
+    url = "sensational-chaja-502ad3.netlify.app/event"
+}
 export interface UserEvent {
     id: number;
     title: string;
@@ -100,7 +102,7 @@ LoadRequestAction | LoadSuccessAction | LoadFailureAction
       });
 
       try {
-          const response = await fetch('http://localhost:3001/events');
+          const response = await fetch(`${url}`);
           const events: UserEvent[] = await response.json();
 
           dispatch({
@@ -133,7 +135,7 @@ CreateRequestAction | CreateSuccessAction | CreateFailureAction
             dateStart,
             dateEnd: new Date().toISOString()
         };
-        const response = await fetch('http://localhost:3001/events', {
+        const response = await fetch(`${url}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -168,7 +170,7 @@ DeleteRequestAction | DeleteSuccessAction | DeleteFailureAction
     });
 
     try {
-        const response = await fetch(`http://localhost:3001/events/${id}`, {
+        const response = await fetch(`${url}/${id}`, {
         method: 'DELETE'
         });
         if (response.ok) {
@@ -195,7 +197,7 @@ UpdateRequestAction | UpdateSuccessAction | UpdateFailureAction
     });
 
     try{
-        const response = await fetch(`http://localhost:3001/events/${event.id}`, {
+        const response = await fetch(`${url}/${event.id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
