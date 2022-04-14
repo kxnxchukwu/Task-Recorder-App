@@ -6,7 +6,7 @@ import { RootState } from "./store";
 let url:string = 'http://localhost:3001/events'
 
 if (process.env.NODE_ENV === 'production') {
-    url = "sensational-chaja-502ad3.netlify.app/event"
+    url = "https://sensational-chaja-502ad3.netlify.app/event"
 }
 export interface UserEvent {
     id: number;
