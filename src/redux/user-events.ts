@@ -3,11 +3,9 @@ import { ThunkAction } from "redux-thunk";
 import { selectDateStart } from "./recorder";
 import { RootState } from "./store";
 
-let url:string = 'http://localhost:3001/events'
+let url:string;
 
-if (process.env.NODE_ENV === 'production') {
-    url = "https://task-recorder-online.herokuapp.com/event"
-}
+(process.env.NODE_ENV === "production") ? url = "https://task-recorder-online.herokuapp.com/events" : 'http://localhost:3001/events';
 export interface UserEvent {
     id: number;
     title: string;
