@@ -1,0 +1,8 @@
+.center {
+    position: absolute;
+    top: 4%;
+    transform: translate(0, -50%);
+    left: 30%;
+    font-size: xx-large;
+    padding-bottom: 25px;
+    }
