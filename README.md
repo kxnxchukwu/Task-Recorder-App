@@ -3,7 +3,7 @@
 Task Recorder App is an advanced to do list where you can create tasks, record the time for the tasks, update them and delete.
 
 ### Links
-- **Main App**: [here](https://task-recorder-online.herokuapp.com)
+- **Main App**: [here](https://628815cc837244103e7a762b--lucky-lokum-ba507d.netlify.app/)
 
 ### Technologies
 - **React**
