@@ -3,7 +3,7 @@ import { ThunkAction } from "redux-thunk";
 import { selectDateStart } from "./recorder";
 import { RootState } from "./store";
 
-let url = "https://task-recorder-online.herokuapp.com/events";
+let url:string = "/.netlify/functions/events";
 export interface UserEvent {
     id: number;
     title: string;

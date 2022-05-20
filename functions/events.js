@@ -1,4 +1,4 @@
-{
+let eventsObj = {
   "events": [
     {
       "title": "Click Me to Edit",
@@ -35,6 +35,36 @@
       "dateStart": "2022-04-14T18:50:45.473Z",
       "dateEnd": "2022-04-14T19:30:46.016Z",
       "id": 6
+    },
+    {
+      "title": "Learning Netlify Serverless Functions.",
+      "dateStart": "2022-05-20T20:10:37.830Z",
+      "dateEnd": "2022-05-20T23:20:40.367Z",
+      "id": 7
     }
   ]
 }
+
+exports.handler =  async function(event, context) {
+
+  if (event.httpMethod === "POST") {
+    let body = JSON.parse(event.body);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(body)
+    }
+  }
+
+  if (event.httpMethod === "PUT") {
+    let body = JSON.parse(event.body);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(body)
+    }
+  }
+  
+  return {
+    statusCode: 200,
+    body: JSON.stringify(eventsObj.events)
+  }
+};
